@@ -54,7 +54,7 @@ export default function RentalsPage() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/rentals",
+        `${process.env.NEXT_PUBLIC_API_URL}/rentals`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -87,13 +87,13 @@ export default function RentalsPage() {
     try {
       const [customersResponse, equipmentResponse] =
         await Promise.all([
-          fetch("http://127.0.0.1:8000/customers", {
+          fetch(`${process.env.NEXT_PUBLIC_API_URL}/customers`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
           }),
 
-          fetch("http://127.0.0.1:8000/equipment", {
+          fetch(`${process.env.NEXT_PUBLIC_API_URL}/equipment`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -160,7 +160,7 @@ export default function RentalsPage() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/rentals",
+        `${process.env.NEXT_PUBLIC_API_URL}/rentals`,
         {
           method: "POST",
           headers: {
@@ -215,7 +215,7 @@ export default function RentalsPage() {
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/rentals/${rentalId}/return`,
+        `${process.env.NEXT_PUBLIC_API_URL}/rentals/${rentalId}/return`,
         {
           method: "POST",
           headers: {

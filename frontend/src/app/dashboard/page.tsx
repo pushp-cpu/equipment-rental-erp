@@ -38,13 +38,13 @@ export default function Dashboard() {
 
       try {
         const [equipmentResponse, rentalsResponse] = await Promise.all([
-          fetch("http://127.0.0.1:8000/equipment", {
+          fetch(`${process.env.NEXT_PUBLIC_API_URL}/equipment`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
           }),
 
-          fetch("http://127.0.0.1:8000/rentals", {
+          fetch(`${process.env.NEXT_PUBLIC_API_URL}/rentals`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },

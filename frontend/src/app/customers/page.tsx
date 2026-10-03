@@ -31,7 +31,7 @@ export default function CustomersPage() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/customers",
+        `${process.env.NEXT_PUBLIC_API_URL}/customers`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -80,7 +80,7 @@ export default function CustomersPage() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/customers",
+        `${process.env.NEXT_PUBLIC_API_URL}/customers`,
         {
           method: "POST",
           headers: {
@@ -340,3 +340,4 @@ export default function CustomersPage() {
     </div>
   );
 }
+
